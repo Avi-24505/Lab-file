@@ -26,6 +26,7 @@ body{
     height: 100%;
     top: 0;
     left: 0;
+    perspective: 1500px;
 }
 
 .front, .back{
@@ -35,10 +36,14 @@ body{
     height: 100%;
     top: 0;
     left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
 }
 
 .front{
     z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
 }
 .back{
     z-index: 0;
@@ -50,6 +55,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.back-content{
+    transform: rotateY(180deg);
+}
+
+/* Paper flipped */
+.flipped .front, .flipped .back{
+    transform: rotateY(-180deg);
 }
 
 /* Controller Buttons */
