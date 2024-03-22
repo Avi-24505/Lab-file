@@ -20,8 +20,15 @@ function openBook() {
     prevBtn.style.transform = "translateX(-180px)";
     nextBtn.style.transform = "translateX(180px)";
 }
-function closeBook() {
-
+function closeBook(isAtBeginning){
+    if(isAtBeginning){
+        book.style.transform = "translateX(0%)";
+    }
+    else{
+        book.style.transform = "translateX(100%)";
+    }
+    prevBtn.style.transform = "translateX(0px)";
+    nextBtn.style.transform = "translateX(0px)";    
 }
 function goNextPage() {
     if(currentLocation < maxLocation){
@@ -50,7 +57,7 @@ function goPrevPage() {
     if(currentLocation>1){
         switch(currentLocation){
             case 2:
-                closeBook();
+                closeBook(true);
                 paper1.classList.remove("flipped");
                 paper1.style.zIndex = 3;
                 break;
@@ -59,6 +66,7 @@ function goPrevPage() {
                 paper2.style.zIndex = 2;
                 break;
             case 4:
+                openBook();
                 paper3.classList.remove("flipped");
                 paper3.style.zIndex = 1;
                 break;
