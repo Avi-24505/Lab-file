@@ -76,3 +76,4 @@ function goPrevPage() {
         currentLocation--;
     }
 }
+// Completed
