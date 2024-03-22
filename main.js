@@ -27,12 +27,15 @@ function goNextPage() {
             case 1:
                 openBook();
                 paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
                 break;
-            case 2:
-                paper2.classList.add("flipped");
-                break;
-            case 3:
-                paper3.classList.add("flipped");
+                case 2:
+                    paper2.classList.add("flipped");
+                    paper2.style.zIndex = 2;
+                    break;
+                    case 3:
+                        paper3.classList.add("flipped");
+                        paper3.style.zIndex = 3;
                 closeBook();
                 break;
             default:
